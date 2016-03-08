@@ -1,0 +1,19 @@
+{
+  "name": "OnlineChat",
+  "version": "1.0.0",
+  "description": "OnlineChat code",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app"
+  },
+  "keywords": [
+    "onlinechat"
+  ],
+  "author": "CC-Cai",
+  "license": "ISC",
+  "dependencies": {
+  	"express":"3.0.1",
+  	"socket.io":">=0.9.16"
+
+  }
+}
