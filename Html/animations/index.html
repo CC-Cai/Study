@@ -1,9 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>animations Test</title>
+	<style> 
+	.amin_box{
+		width: 50px;
+		height: 50px;
+		background-color: rgba(118, 39, 167, 0.1);
+		margin: 0 auto;	
+	}
+	.amin_box:hover{
+
+		animation-name:resize;  /*动画关键帧名称*/
+		animation-duration:3s; /*动画执行时间 */
+		animation-iteration-count:2; /*重复次数*/
+		animation-direction:alternate; /*规定是否应该轮流反向播放动画*/
+		animation-delay:1s; /*动画延迟执行时间 */
+
+		-webkit-animation-name:resize; 
+		-webkit-animation-duration:3s;  
+		-webkit-animation-iteration-count:2; 
+		-webkit-animation-direction:alternate; 
+		-webkit-animation-delay:1s;  
+	}
+
+	@keyframes resize{
+
+		0%{
+			width:50px;
+			height: 50px;
+			background-color: rgba(118, 39, 167, 0.1);
+		}
+
+		50%{
+			width: 200px;
+			height: 200px;
+			background-color: rgba(118, 39, 167, 0.3);
+		}
+
+		100%{
+			width: 500px;
+			height: 500px;
+			background-color: rgba(118, 39, 167, 0.6);
+		}
+
+	}
+
+	@-webkit-keyframes resize{
+
+		0%{
+			width:50px;
+			height: 50px;
+			background-color: rgba(118, 39, 167, 0.1);
+		}
+
+		50%{
+			width: 200px;
+			height: 200px;
+			background-color: rgba(118, 39, 167, 0.3);
+		}
+
+		100%{
+			width: 500px;
+			height: 500px;
+			background-color: rgba(118, 39, 167, 0.6);
+		}
+
+	}
+
+	.vertical_center{   /*垂直居中样式*/
+		display:table-cell;  
+  		vertical-align: middle;
+	}
+	</style>
 </head>
 <body>
-
+	<div style="width:500px;height:500px; background-color:rgb(23, 33, 107);display:table">
+		<div class="vertical_center">
+			<div class="amin_box"></div>
+		</div>
+	</div>
 </body>
 </html>

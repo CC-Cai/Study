@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" style="border: 1px solid #333;"> </canvas>
+<script type="text/javascript">
+	window.onload =function  () {
+		var canvas =document.getElementById("canvas");
+
+		canvas.width=1024;
+		canvas.height =768;
+
+		if(canvas.getContext("2d")){ //判断浏览器是否支持Canvas
+			var context =canvas.getContext("2d");
+
+			context.beginPath();  //定义路径开始
+			context.moveTo(100,100);
+			context.lineTo(700,700);
+			context.lineTo(100,700);
+			context.lineTo(200,600);
+			// context.lineTo(100,100); //如果最终位置不是起始位置则自动到起始位置
+			context.lineWidth=5; //设置线条宽度
+			context.strokeStyle ="blue";  //设置样式
+			context.closePath(); //定义路径结束
+			context.stroke();  // 绘制线条
+
+			context.fillStyle="black"; //设置填充色
+			context.fill(); //填充颜色
+
+			
+
+			context.beginPath();  //定义路径开始
+			context.moveTo(200,100);
+			context.lineTo(600,700);
+			context.strokeStyle ="#3FB931";
+			context.closePath();
+			context.stroke(); 
+
+		}else{
+			alert("当前浏览器不支持Canvas，请更换浏览器后再试")
+		}
+
+
+	}
+</script>
+</body>
+</html>
