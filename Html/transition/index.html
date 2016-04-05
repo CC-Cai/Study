@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Transition Demo</title>
+	<style type="text/css">
+	.trans1 {
+		width: 100px;
+		height:100px;
+		background-color: blue;
+		transition:width 2s;
+		-moz-transition:width 2s; /* Firefox 4 */
+		-webkit-transition:width 2s; /* Safari and Chrome */
+		-o-transition:width 2s; /* Opera */
+	}
+
+	.trans1:hover{
+		width: 400px;
+	}
+
+	.trans2 {
+    	width: 10%;
+    	height: 64px;
+    	margin:10px 0;
+    	background-color:#486AAA;
+    	color:#fff;
+    	text-align:center;
+	}
+	.ease {
+		transition: all 4s ease;
+		-moz-transition: all 4s ease; /* Firefox 4 */
+		-webkit-transition:all 4s ease; /* Safari and Chrome */
+		-o-transition:all 4s ease; /* Opera */
+	}
+	.trans2:hover{
+    	margin-left:89%;
+    	background-color:#BECEEB;
+    	color:#333;
+    	border-radius:25px;        
+    	transform: rotate(360deg);        		
+	}
+
+	</style>
+</head>
+<body>
+	<div>
+	<div class ="trans1"> 123</div>
+	 <div class="trans2 ease"> </div>
+	</div>
+</body>
+</html>
