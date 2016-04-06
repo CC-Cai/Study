@@ -16,30 +16,39 @@
 			var context =canvas.getContext("2d");
 
 			context.beginPath();  //定义路径开始
-			context.moveTo(100,100);
+			context.moveTo(100,100); //定义状态
 			context.lineTo(700,700);
 			context.lineTo(100,700);
 			context.lineTo(200,600);
 			// context.lineTo(100,100); //如果最终位置不是起始位置则自动到起始位置
 			context.lineWidth=5; //设置线条宽度
 			context.strokeStyle ="blue";  //设置样式
-			context.closePath(); //定义路径结束
+			context.closePath(); //定义路径结束，会自动连接起来,但是对fill() 无效
 			context.stroke();  // 绘制线条
 
 			context.fillStyle="black"; //设置填充色
 			context.fill(); //填充颜色
 
-			
 
 			context.beginPath();  //定义路径开始
 			context.moveTo(200,100);
 			context.lineTo(600,700);
 			context.strokeStyle ="#3FB931";
 			context.closePath();
-			context.stroke(); 
+			context.stroke();  //开始绘制
+			drwArc(context);
 
 		}else{
 			alert("当前浏览器不支持Canvas，请更换浏览器后再试")
+		}
+
+		//创建弧形/曲线
+		function drwArc (context) {
+			context.beginPath();
+			context.arc(600,200,100,0,0.5*Math.PI,true) //设置状态
+			//context.closePath();
+			//context.stroke();
+			context.fill()
 		}
 
 
