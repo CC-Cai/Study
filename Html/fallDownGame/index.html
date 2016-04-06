@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>fallDownGame</title>
+	<style type="text/css">
+		html{height:100%;}
+		body{height:100%;background-color:rgb(128,128,128);}
+
+		.title{
+			height: 10%;
+			background-color: rgba(120,78,36,0.5);
+		}
+
+		.container{
+  			height:80%;
+  			width:100%;
+  			margin:auto;
+  			background-color:#7171DE;
+  			position: relative;
+  			overflow: hidden;
+		}
+
+		.scrool-content{
+			position: relative;
+			width: 100%;
+			height: 100%
+		}
+
+		.scrool-item{
+			width: 33.3%;
+			height: 20%;
+			float: right;
+			border-radius: 40px;
+		}
+
+		.scrool-item.red{
+			background-color: #B12020;
+		}
+
+		.srcool-item.yello{
+			background-color: #CCCA33;
+		}
+
+		.scrool-item.black{
+			background-color: #fff;
+		}
+
+
+		.falling{
+			top: 0px;
+			-webkit-transition:all 20s linear;
+    		-moz-transition:all 20s linear;
+    		-o-transition:all 20s linear;
+    		-ms-transition:all 20s linear;    
+    		transition:all 20s linear;
+		}
+
+		.fallend{
+			top:-500%
+			/*transform:translate3d(0px,-200px,0px);*/
+		}
+
+		.footer{
+			text-align: center;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="title">
+		当前分数：<span>100</span>分    剩余时间<span>20:00</span>s
+	</div>
+	<div class="container">
+		<div class="scrool-content  falling" id="content">	
+			<div class="scrool-item">
+				
+			</div>
+			<div class="scrool-item red">
+				
+			</div>
+			<div class="scrool-item">
+				
+			</div>
+			<div class="scrool-item yello">
+				
+			</div>
+			<div class="scrool-item">
+				
+			</div>
+			<div class="scrool-item">
+				
+			</div>
+			<div class="scrool-item">
+				
+			</div>
+			<div class="scrool-item">
+				
+			</div>
+			<div class="scrool-item red">
+				
+			</div>
+			<div class="scrool-item">
+				
+			</div>
+			<div class="scrool-item black">
+				
+			</div>
+			<div class="scrool-item">
+				
+			</div>
+			<div class="scrool-item">
+				
+			</div>
+			<div class="scrool-item">
+				
+			</div>
+			<div class="scrool-item">
+				
+			</div>
+			<div class="scrool-item">
+				
+			</div>
+			<div class="scrool-item">
+				
+			</div>
+		</div>
+	</div>
+	<div class="footer"> <input type="button" id="start" value="开始了" /> </div>
+	<script type="text/javascript" src="http://static.huizecdn.com/js/libs/zepto/1.1.6/zepto.min.js">
+	</script>
+	<script type="text/javascript">
+		 $('#start').bind("touchstart",function(){
+			$("#content").addClass("fallend");
+		})
+
+		 function statrGame(){
+		 	
+		 }
+	</script>
+</body>
+</html>
