@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>BackBoneModelTest</title>
+</head>
+<body>
+	<div>
+		Welcome  to BackBone ！！！
+	</div>
+	<script src="http://the5fireblog.b0.upaiyun.com/staticfile/jquery-1.10.2.js"></script>
+	<script src="http://the5fireblog.b0.upaiyun.com/staticfile/underscore.js"></script>
+	<script src="http://the5fireblog.b0.upaiyun.com/staticfile/backbone.js"></script>
+	<script type="text/javascript">
+		(function($){
+			var Man =Backbone.Model.extend({
+				initialize:function(){
+					// alert("Hey,you create me!");
+					//初始化时绑定监听,change事件会先于validate发生
+					this.bind('change:name', function() {
+						var name =this.get('name');
+						alert('名字变为了：' +name);
+					});
+					this.bind('change', function() {
+						var name =this.get('name');
+						alert( name+'某一个属性变了!');
+					});
+					this.bind('invalid', function(model,error) {
+						alert(error);
+					});
+				},
+				defaults:{ //设置默认值
+					name:'张三',
+					age:'38',
+					sex:'男'
+				},
+				validate:function(attributes){
+					if(!attributes.name){
+						return "name 不能为空！";
+					}
+				},
+				sayHi:function(){
+					alert('Hi,我叫'+this.get('name')+'，性别'+this.get('sex')+'，今年'+this.get('age')+'岁');
+				}
+			});
+			var man = new Man();
+			// alert(man.get('name'));
+			//赋值时定义//触发绑定的change事件
+			man.set({name:'李四',age:'20',job:'学生'});
+			//触发绑定的change事件
+			man.set({age:"10"});
+			man.set({name:""});
+
+			//save时触发验证。根据验证规则，弹出错误提示。
+			man.save();
+			//手动触发验证, set时会触发
+			man.set({name:""}, {'validate':true});
+
+			// alert(man.get('job'));
+			// man.sayHi();
+		})(jQuery);
+	</script>
+</body>
+</html>
