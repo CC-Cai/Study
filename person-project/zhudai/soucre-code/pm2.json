@@ -3,7 +3,7 @@
         "name": "zhudai-server",
         "cwd": "/CC-Cai/from-git/Study/person-project/zhudai/soucre-code",
         "script": "bin/www",
-        "exec_mode": "cluster",
+        "exec_mode": "fork",
         "instances": "0",
         "args": ["--enable-logs", "-n", "15", "--color"],
         "log_date_format": "YYYY-MM-DD HH:mm Z",
