@@ -4,7 +4,7 @@ var RADIUS=8;
 var MARGIN_TOP=60;
 var MARGIN_LEFT=30;
 
-const endTime=new Date(2016,3,8,12,58,58);
+const endTime=new Date(2016,3,12,12,58,58);
 
 var curShowTimeSeconds=0;
 

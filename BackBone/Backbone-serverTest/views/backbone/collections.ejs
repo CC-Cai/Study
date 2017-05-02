@@ -51,6 +51,16 @@
     			},
     		});
 
+            var NewBooks =Backbone.Collection.extend({
+                model:Book,
+                url:"http://localhost:3000/backbone/bookshelf"
+            });
+
+            var books =new NewBooks();
+
+            var onebook =books.create({
+                title:"I'm coming"
+            });
 
     		// bookShelf.add(book1);
     		// bookShelf.add(book2);

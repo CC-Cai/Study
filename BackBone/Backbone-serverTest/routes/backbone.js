@@ -7,9 +7,15 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET collections page. */
-router.get('/collections', function(req, res, next) {
+router.get('/collections', function (req, res, next) {
   res.render('backbone/collections', { title: 'Express' });
 });
+
+router.post('/bookShelf',function (req,res,next) {
+	console.log(req.body);
+	res.send('create success!')
+	// body...
+})
 
 router.get('/bookShelf',function(req,res,next){
 	var bookShelf=[];

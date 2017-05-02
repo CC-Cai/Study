@@ -1,0 +1,20 @@
+<html>
+	<head>Vue.js  Test </head>
+	<body>
+		<script src='../vue.js'>
+		</script>
+		<div id="app">
+		<p>{{ message }}</p>
+		<input  v-model='message'></div>
+		<script>
+		var  dataTest ={
+			message:'123'
+		}
+		new Vue({
+			el:"#app",
+			data:dataTest
+		})
+		</script>
+		
+	</body>
+</html>
